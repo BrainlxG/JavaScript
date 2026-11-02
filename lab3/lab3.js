@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 import { fib } from '../lab2/lab2.js';
 

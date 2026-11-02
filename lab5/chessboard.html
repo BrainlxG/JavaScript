@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Шахматная доска</title>
+    <style>
+        table {
+            background: white;
+            font-size: 88%;
+            border: 1px #b0b0b0 solid;
+            padding: 0;
+            margin: auto;
+            border-spacing: 0;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody style="vertical-align:middle;text-align:center;">
+            <tr>
+                <td></td>
+                <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>♜</td><td>♞</td><td>♝</td><td>♛</td><td>♚</td><td>♝</td><td>♞</td><td>♜</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>♟</td><td>♟</td><td>♟</td><td>♟</td><td>♟</td><td>♟</td><td>♟</td><td>♟</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>♙</td><td>♙</td><td>♙</td><td>♙</td><td>♙</td><td>♙</td><td>♙</td><td>♙</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>♖</td><td>♘</td><td>♗</td><td>♕</td><td>♔</td><td>♗</td><td>♘</td><td>♖</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        'use strict';
+        const rows = document.querySelectorAll('tr');
+        for (let i = 1; i <= 8; i++) {
+            const cells = rows[i].querySelectorAll('td');
+            for (let j = 1; j <= 8; j++) {
+                if ((i + j) % 2 === 0) {
+                    cells[j].style.backgroundColor = '#ffce9e';
+                } else {
+                    cells[j].style.backgroundColor = '#d18b47';
+                }
+                cells[j].style.fontSize = '26px';
+                cells[j].style.height = '26px';
+                cells[j].style.width = '26px';
+            }
+        }
+    </script>
+</body>
+</html>

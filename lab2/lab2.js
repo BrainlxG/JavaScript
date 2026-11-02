@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * Возвращает x, возведённое в n-ную степень.
@@ -87,6 +87,6 @@ function sum(...args) {
 function addBlackSpot(obj) {
     obj[Symbol.for('blackSpot')] = true;
     return obj;
-	
-	export { pow, sumToNewFunc, isLeapYear, factorial, fib, compare, sum, addBlackSpot };
 }
+
+export { pow, sumToNewFunc, isLeapYear, factorial, fib, compare, sum, addBlackSpot };

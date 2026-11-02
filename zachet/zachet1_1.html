@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квадратное уравнение</title>
+</head>
+<body>
+
+    <h1>Поиск корней</h1>
+
+    <form id="eqForm" onsubmit="findRoots(); return false;">
+        <div>
+            <label>a: <input type="text" id="a" required></label>
+        </div>
+        <div>
+            <label>b: <input type="text" id="b" required></label>
+        </div>
+        <div>
+            <label>c: <input type="text" id="c" required></label>
+        </div>
+        <button>Найти корни</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        'use strict';
+        
+        function findRoots() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            const c = parseFloat(document.getElementById("c").value);
+            const resultDiv = document.getElementById("result");
+
+            if (a === 0) {
+                resultDiv.innerHTML = "a не может быть равно 0";
+                return;
+            }
+
+            const d = (b * b) - (4 * a * c);
+
+            if (d < 0) {
+                resultDiv.innerHTML = "Корней нет (D < 0)";
+            } else if (d === 0) {
+                const x = -b / (2 * a);
+                resultDiv.innerHTML = `Один корень: x = ${x}`;
+            } else {
+                const x1 = (-b + Math.sqrt(d)) / (2 * a);
+                const x2 = (-b - Math.sqrt(d)) / (2 * a);
+                resultDiv.innerHTML = `Два корня: x1 = ${x1}, x2 = ${x2}`;
+            }
+        }
+    </script>
+</body>
+</html>
